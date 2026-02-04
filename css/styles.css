@@ -19,6 +19,17 @@
 /* === /VARIABLES ==== */
 
 /* ==== COMMON STYLES === */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -26,6 +37,9 @@ a {
 
 ul,
 ol {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
   list-style-type: none;
 }
 
@@ -39,6 +53,32 @@ body {
   background-color: var(--white);
 }
 
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  max-width: 1158px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 .section-title {
   font-weight: 700;
   font-size: 36px;
@@ -47,9 +87,34 @@ body {
   text-align: center;
   color: var(--navy-blue);
   text-transform: capitalize;
+  margin-bottom: 72px;
+}
+
+.section {
+  padding: 120px 0; 
 }
 
 /* === HEADER STYLES === */
+.page-header {
+  border-bottom: 1px solid var(--cornflower);
+}
+
+.header-container,
+.page-navigation,
+.menu,
+.contact-list {
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  column-gap: 40px;
+}
+
+.contact-list {
+  column-gap: 40px;
+}
+
 .page-logo {
   font-family: var(--secondary-font);
   font-weight: 700;
@@ -57,7 +122,12 @@ body {
   line-height: 1.17;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  color: var(--iris);
+  color: var(--iris);  
+}
+
+.logo-header {
+  padding: 24px 0;
+  margin-right: 76px;
 }
 
 .header-accent-color {
@@ -65,6 +135,8 @@ body {
 }
 
 .menu-link {
+  display: block;
+  padding: 24px 0;
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.02em;
@@ -73,9 +145,12 @@ body {
 
 .contact-address {
   font-style: normal;
+  margin-left: auto;
 }
 
 .contact-list-link {
+  display: block;
+  padding: 24px 0;
   font-style: normal;
   line-height: 1.5;
   letter-spacing: 0.02em;
@@ -93,20 +168,31 @@ body {
 /* === HERO STYLES=== */
 .hero-section {
   background-color: var(--navy-blue);
+  padding-top: 188px;
+  padding-bottom: 188px;
 }
 
 .main-title {
+  max-width: 496px;
   font-weight: 700;
   font-size: 56px;
   line-height: 1.07;
   letter-spacing: 0.02em;
   text-align: center;
   color: var(--white);
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 48px;
 }
 
 .order-btn {
-  background-color: var(--iris);
+  display: block;
   border: none;
+  border-radius: 4px;
+  padding: 16px 32px;
+  margin: 0 auto;
+  background-color: var(--iris);
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.04em;
@@ -120,12 +206,23 @@ body {
 /* === /HERO STYLES === */
 
 /* === FEATURES STYLES === */
+.features-list {
+  display: flex;
+  gap: 24px;
+}
+
+.features-list-item {
+  width: calc((100% - 3*24px) / 4);
+  background-color: var(--white);
+}
+
 .features-list-title {
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
   letter-spacing: 0.02em;
   color: var(--navy-blue);
+  margin-bottom: 8px;
 }
 
 .features-list-content {
@@ -139,8 +236,21 @@ body {
   background-color: var(--cloud);
 }
 
+.team-list {
+  display: flex;
+  gap: 24px;
+}
+
 .team-list-item {
+  width: calc((100% - 3*24px) / 4);
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
   background-color: var(--white);
+}
+
+.team-list-content {
+  text-align: center;
+  padding: 32px 16px;
 }
 
 .team-list-title {
@@ -148,23 +258,37 @@ body {
   font-size: 20px;
   line-height: 1.2;
   letter-spacing: 0.02em;
-  text-align: center;
   color: var(--navy-blue);
+  margin-bottom: 8px;
 }
 
 .team-list-text {
   line-height: 1.5;
   letter-spacing: 0.02em;
-  text-align: center;
 }
 /* === /TEAM STYLES === */
 
 /* === PORTFOLIO STYLES === */
+.portfolio-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px 24px;
+}
+
 .portfolio-list-item {
+  width: calc((100% - 2*24px) / 3);
   background-color: var(--white);
 }
 
+.portfolio-list-content {
+  border-bottom: 1px solid var(--cornflower);
+  border-left: 1px solid var(--cornflower);
+  border-right: 1px solid var(--cornflower);
+  padding: 32px 16px;
+}
+
 .portfolio-list-title {
+  margin-bottom: 8px;
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
@@ -182,6 +306,8 @@ body {
 .page-footer {
   background: var(--navy-blue);
   color: var(--cloud);
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 
 .footer-accent-color {
@@ -191,5 +317,11 @@ body {
 .footer-text {
   line-height: 1.5;
   letter-spacing: 0.02em;
+  max-width: 264px;
+}
+
+.logo-footer {
+  display: block;
+  margin-bottom: 16px;
 }
 /* === /FOOTER STYLES === */
