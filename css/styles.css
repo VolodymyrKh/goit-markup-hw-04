@@ -200,6 +200,8 @@ img {
   background-image: linear-gradient(var(--grey), var(--grey)),
   url('../images/hero/hero-bg.jpg');
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .main-title {
@@ -251,10 +253,11 @@ img {
 .icon-wrapper {
   display: flex;
   justify-content: center;
+  align-items: center;
+  height: 112px;
   border: 1px solid var(--light-slate);
   border-radius: 4px;
   background-color: var(--cloud);
-  padding: 24px 0;
   margin-bottom: 8px;
 }
 
@@ -312,7 +315,8 @@ img {
 }
 
 .social-list {
-  display: inline-flex;
+  display: flex;
+  justify-content: center;
   gap: 24px;
 }
 
@@ -329,7 +333,7 @@ img {
 }
 
 .social-list-link:hover,
-.social-list-link:hover {
+.social-list-link:focus {
   background-color: var(--ocean);
 }
 /* === /TEAM STYLES === */
@@ -372,7 +376,7 @@ img {
   box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
   
   .portfolio-overlay {
-    transform: translateY(0);
+    transform: translateY(0%);
   }
 }
 
@@ -408,6 +412,7 @@ img {
 
 .footer-container {
   display: flex;
+  align-items: baseline;
 }
 
 .footer-left-content {
@@ -437,13 +442,12 @@ img {
   margin-bottom: 16px;
 }
 
-.footer-center-content {
-  .social-list {
-    gap: 16px;
-  }
-  .social-list-link:hover,
-  .social-list-link:focus {
-    background-color: var(--green);
-  }
+.footer-center-content .social-list {
+  gap: 16px;
 }
+.footer-center-content .social-list-link:hover,
+.footer-center-content .social-list-link:focus {
+  background-color: var(--green);
+}
+
 /* === /FOOTER STYLES === */
